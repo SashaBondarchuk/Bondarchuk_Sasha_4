@@ -10,26 +10,13 @@ namespace lab4
     {
         static void Main(string[] args)
         {
-            MusicalInstrument[] Orchestra = new MusicalInstrument[]
-            {
-                new PercussionInstrument(name: "Барабан"),
-                new PercussionInstrument(name: "Великий барабан"),
-                new StringInstrument(name: "Гітара", isTuned: false, stringCount: 6),
-                new WindInstrument(name: "Сопілка"/*, isTuned: true*/),
-                new WindInstrument(name: "Саксофон", isTuned: true)
-            };
-            
+            Orchestra orchestra = new Orchestra();
+
             Console.WriteLine("Склад оркестру:");
-            foreach (var musicalinstrument in Orchestra)
-            {
-                musicalinstrument.ShowInfo();
-            }
+            orchestra.Show();
 
             Console.WriteLine("\nЗвуки інструментів:");
-            foreach (var musicalinstrument in Orchestra)
-            {
-                musicalinstrument.MakeSound();
-            }
+            orchestra.Sounds();
         }
     }
 }
